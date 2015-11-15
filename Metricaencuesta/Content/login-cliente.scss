@@ -1,0 +1,25 @@
+﻿@import "cssfile/utility.min.css";
+$bgcolor:#E0E0E0;
+$blanco:white;
+body {
+    background-color:$bgcolor;
+    section{
+        article{
+            .box_login{
+                background-color:$blanco;
+                margin-top:10%;
+                figure{
+                    img{
+                        margin:auto;
+                    }
+                }
+                .form-horizontal{
+                    .form-group{
+                        margin-left:4%;
+                        margin-right:4%;
+                    }
+                }
+            }
+        }
+    }
+}

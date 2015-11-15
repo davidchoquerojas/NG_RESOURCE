@@ -1,0 +1,20 @@
+﻿@import url(cssfile/utility.min.css);
+body {
+  background-color: #E0E0E0;
+}
+
+body section article .box_login {
+  background-color: white;
+  margin-top: 10%;
+}
+
+body section article .box_login figure img {
+  margin: auto;
+}
+
+body section article .box_login .form-horizontal .form-group {
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+/*# sourceMappingURL=login-cliente.css.map */

@@ -1,0 +1,15 @@
+﻿body .container .row .menu_item_title {
+  margin-bottom: 20px;
+  color: #006683;
+  border-bottom: 1px solid #006683;
+}
+
+body .container .row .menu_item_title h3 {
+  text-align: center;
+}
+
+body .container .row .menu_item .icon_view {
+  font-size: 5em;
+}
+
+/*# sourceMappingURL=nav.css.map */

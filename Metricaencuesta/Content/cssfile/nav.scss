@@ -1,0 +1,20 @@
+﻿$metricacolor:#006683;
+body {
+    .container{
+        .row{
+            .menu_item_title{
+                margin-bottom:20px;
+                color:$metricacolor;
+                border-bottom:1px solid $metricacolor;
+                h3{
+                    text-align:center;
+                }
+            }
+            .menu_item{
+                .icon_view{
+                    font-size:5em;
+                }
+            }
+        }
+    }
+}

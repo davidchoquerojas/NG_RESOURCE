@@ -1,0 +1,190 @@
+﻿@{
+    ViewBag.Title = "Empleado";
+}
+<div class="row margin-top" ng-controller="EmpleadoCtrl">
+    <div class="col-md-12">
+        <div class="panel-group" id="accordion">
+            <div class="panel">
+                <form novalidate class="form-horizontal" name="form">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" data-target="#screen1" aria-expanded="false" class="collapsed">
+                                <span class="glyphicon glyphicon-plus-sign"></span> Formulario de registro
+                            </a>
+                            <button data-toggle="collapse" data-parent="#accordion" data-target="#screen2" class="btn btn-default pull-right" ng-disabled="form.$invalid" ng-click="save(empleado)">
+                                <span class="glyphicon glyphicon-floppy-disk"></span>
+                                Grabar
+                            </button>
+                            <button class="btn btn-default pull-right" ng-click="new()">
+                                <span class="glyphicon glyphicon-new-window"></span>
+                                nuevo
+                            </button>
+                        </h4>
+                    </div>
+
+                    <div id="screen1" class="panel-collapse collapse fade" aria-expanded="false">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-md-2">DNI*</label>
+                                        <div class="col-sm-10 col-md-10">
+                                            <input type="text" class="form-control" ng-model="empleado.dni" maxlength="8" autocomplete="on" placeholder="DNI" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-md-2">Nombres*</label>
+                                        <div class="col-sm-10 col-md-10">
+                                            <input type="text" class="form-control" ng-model="empleado.nombres" placeholder="Nombres" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-md-2">Apellidos*</label>
+                                        <div class="col-sm-10 col-md-10">
+                                            <input type="text" class="form-control" ng-model="empleado.apellidos" placeholder="Apellidos" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-md-2">Teléfono</label>
+                                        <div class="col-sm-10 col-md-10">
+                                            <input type="tel" class="form-control" ng-model="empleado.telefono" placeholder="Teléfono" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-md-2">Correo</label>
+                                        <div class="col-sm-10 col-md-10">
+                                            <input type="email" class="form-control" ng-model="empleado.correo" placeholder="Correo" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-md-2">Usuario*</label>
+                                        <div class="col-sm-10 col-md-10">
+                                            <input type="text" class="form-control" ng-model="empleado.usuario" placeholder="usuario" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-md-2">Contraseña</label>
+                                        <div class="col-sm-10 col-md-10">
+                                            <input type="password" class="form-control" ng-model="empleado.password" placeholder="Contraseña" ng-disabled="disabled" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-md-2">Tipo de empleado*</label>
+                                        <div class="col-sm-10 col-md-10">
+                                            <select class="form-control" ng-model="empleado.tipo_usuario" ng-options="u.code as u.text for u in userType" required>
+                                                <option value=""> --- Seleccione --- </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-md-2">Hora de Ingreso*</label>
+                                        <div class="col-sm-10 col-md-10">
+                                            <input type="text" ng-model="empleado.hora_ingreso" maxlength="5" class="form-control" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-md-2">Hora de Salida*</label>
+                                        <div class="col-sm-10 col-md-10">
+                                            <input type="text" ng-model="empleado.hora_salida" maxlength="5" class="form-control" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 col-md-2">Estado</label>
+                                        <div class="col-sm-10 col-md-10">
+                                            <select class="form-control" ng-model="empleado.estado" ng-options="s.code as s.text for s in states">
+                                                <option value=""> --- Seleccione --- </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" data-target="#screen2" class="collapsed" aria-expanded="false">
+                            <span class="glyphicon glyphicon-plus-sign"></span> Listado de empleados
+                        </a>
+                    </h4>
+                </div>
+                <div id="screen2" class="panel-collapse collapse in fade" aria-expanded="false">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-striped" ng-cloak>
+                                <thead>
+                                    <tr>
+                                        <th>Dni</th>
+                                        <th>Nombres<i class="fa fa-sort"></i></th>
+                                        <th>Apellidos <i class="fa fa-sort"></i></th>
+                                        <th>Hora Ing.<i class="fa fa-sort"></i></th>
+                                        <th>Correo  <i class="fa fa-sort"></i></th>
+                                        <th>Usuario <i class="fa fa-sort"></i></th>
+                                        <th>Password <i class="fa fa-sort"></i></th>
+                                        <th>Tipo</th>
+                                        <th>Estado</th>
+                                        <th>Acciones</th>
+                                        <th>CV</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="e in listEmpleado">
+                                        <td>{{e.dni}}</td>
+                                        <td>{{e.nombres}}</td>
+                                        <td>{{e.apellidos}}</td>
+                                        <td>{{e.hora_ingreso}}</td>
+                                        <td>{{e.correo}}</td>
+                                        <td>{{e.usuario}}</td>
+                                        <td>{{e.password}}</td>
+                                        <td ng-if="e.tipo_usuario == 'Adm'">Administrador (a)</td>
+                                        <td ng-if="e.tipo_usuario != 'Adm'">Colaborador (a)</td>
+                                        <td ng-if="e.estado == 'A'">Activo</td>
+                                        <td ng-if="e.estado != 'A'">Inactivo</td>
+                                        <td class="text-center">
+                                            <a data-toggle="collapse" data-parent="#accordion" data-target="#screen1" aria-expanded="false" class="collapsed" ng-click="editUser(e)" title="Editar a {{e.nombres}}"> <span class="glyphicon glyphicon-edit"></span></a>
+                                        </td>
+                                        <td ng-if="e.curri_file == null">
+                                            <input style="width: 30px; opacity: 0; position: absolute;z-index: 2;" type="file" id="file" onchange="UploadFile();" />
+                                            <a ng-click="UploadFile();"><span style="line-height: 1.5;" class="glyphicon glyphicon-cloud-upload"> <span class="hidden-xs"></span> Subir</span></a>
+                                        </td>
+                                        <td ng-if="e.curri_file != null">
+                                            <a href="~/Utils/cvs/{{e.curri_file}}"><span class="glyphicon glyphicon-cloud-download"> <span class="hidden-xs"></span>Descargar</span></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/Scripts/appjs/empleado-controller.js"></script>
+}
+
+
+

@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "EncuestaConfig";
+}
+<div class="row margin-top" ng-controller="EncuestaConfigCtrl">
+    <div class="col-md-12">
+        <form class="form-horizontal" name="form">
+            <div class="row">
+                <input type="hidden" ng-model="enccon.id_encuesta" />
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3">Fecha inicio</label>
+                        <div class="col-sm-9 col-md-9">
+                            <input type="date" ng-model="enccon.fecha_ini" class="form-control" id="fecha_desde" required/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3">Fecha Fin</label>
+                        <div class="col-sm-9 col-md-9">
+                            <input type="date"  ng-model="enccon.fecha_fin" class="form-control" id="fecha_hasta" required/>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3">Estado</label>
+                        <div class="col-sm-9 col-md-9">
+                            <select class="form-control" ng-model="enccon.estado" ng-options="s.code as s.text for s in statesE">
+                                <option value=""> --- Seleccione --- </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="form-group">
+                        <button class="btn btn-default pull-right" ng-click="save(enccon)" ng-disabled="form.$invalid" title="Descargar información">
+                            <span class="glyphicon glyphicon-download-alt"></span>
+                            Grabar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Inicio</th>
+                        <th>Fin</th>
+                        <th>Estado</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="r in listEncCon">
+                        <td>{{r.fecha_ini|totime | date:'fullDate'}}</td>
+                        <td>{{r.fecha_fin|totime | date:'fullDate'}}</td>
+                        <td ng-if="r.estado == 'C'">Creado</td>
+                        <td ng-if="r.estado != 'C'">Finalizado</td>
+                        <td class="text-center">
+                            <a data-toggle="collapse" data-parent="#accordion" data-target="#screen1" aria-expanded="false" class="collapsed" ng-click="edit(r)" title="Editar a {{r.id_encuesta}}">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/Scripts/appjs/encuesta_config-controller.js"></script>
+}
+
+
+

@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Reporte";
+}
+<div class="row margin-top" ng-controller="ReporteCtrl">
+    <div class="col-md-12">
+        <form class="form-horizontal">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="form-group">
+                        <label class="col-sm-2 col-md-2">Usuario</label>
+                        <div class="col-sm-10 col-md-10">
+                            <select class="form-control" ng-model="id_empleado" ng-options="u.id_empleado as u.nombres +' '+ u.apellidos for u in listEmpleado">
+                                <option value=""> All </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3">Fecha desde</label>
+                        <div class="col-sm-9 col-md-9">
+                            <input type="date" class="form-control" id="fecha_desde"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3">Fecha hasta</label>
+                        <div class="col-sm-9 col-md-9">
+                            <input type="date" class="form-control" id="fecha_hasta" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-2 col-md-2">
+                    <div class="form-group">
+                        <button class="btn btn-default pull-right" ng-click="consult()" title="Buscar">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        <button class="btn btn-default pull-right" ng-click="download()" title="Descargar información">
+                            <span class="glyphicon glyphicon-download-alt"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Empresa</th>
+                        <th>Colaborador</th>
+                        <th>Fecha Asis.</th>
+                        <th>Hora Ing. Est.</th>
+                        <th>Hora Ing. Marc.</th>
+                        <th>IP_Ingreso</th>
+                        <th>Diff Ing.</th>
+                        <th>Hora Sal. Est.</th>
+                        <th>Hora Sal. Marc.</th>
+                        <th>IP_Salida</th>
+                        <th>Diff Sal.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="r in listReporte">
+                        <td>{{r.razon_social}}</td>
+                        <td>{{r.usuario}}</td>
+                        <td>{{r.fecha_asistencia|totime | date:'mediumDate'}}</td>
+                        <td>{{r.hora_ingresoS}}</td>
+                        <td>{{r.hora_ingreso}}</td>
+                        <td>{{r.ip_ingreso}}</td>
+                        <td>{{r.diferenciaIngreso}}</td>
+                        <td>{{r.hora_SalidaS}}</td>
+                        <td>{{r.hora_salida}}</td>
+                        <td>{{r.ip_salida}}</td>
+                        <td>{{r.diferenciaSalida}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<iframe id="fileDonwload" src="" style="display:none;visibility:hidden;width:1px;height:1px"></iframe>
+@section Scripts{
+    <script src="~/Scripts/appjs/reporte-controller.js"></script>
+}
+

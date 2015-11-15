@@ -1,0 +1,43 @@
+﻿@import "utility.min.css";
+$metricacolor:#006683;
+body {
+    .container{
+        .login_top{
+            margin-top:70px;
+            figure.img-left{
+                img{
+                    width:100%;
+                }
+            }
+            figure.img-right{
+                margin-bottom:40px;
+            }
+        }
+        .form-horizontal{
+             .form-group{
+                 label{
+                        font-weight:600;
+                        color:$metricacolor;
+                    }
+                    input[type="text"],input[type="tel"],input[type="password"],input[type="email"],select{
+                        border:none;
+                        border-radius:0;
+                        border-bottom:1px solid $metricacolor;
+                        color:$metricacolor;
+                    }
+             }
+        }
+    }
+}
+@media screen and (max-width: 750px) {
+    body{
+        .container{
+            .login_top{
+                margin-top:0;
+                figure{
+                    margin-bottom:10px;
+                }
+            }
+        }
+    }
+}

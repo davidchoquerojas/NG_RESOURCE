@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html ng-app="app" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - MétrIca Andina</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/page.min.css" />
+    <meta name="description" content="The description of my page" />
+</head>
+<body>
+    <input type="hidden" value="@Html.Raw(Session["tipo_usuario"].ToString())" id="tipo_usuario" />
+    <input type="hidden" value="@Html.Raw(Session["id_empleado"].ToString())" id="id_empleado" />
+    <header>
+        <div class="row">
+            <div class="hidden-xs col-sm-4 col-md-3 header_left">
+                <center>
+                    <figure>
+                        <img src="~/Utils/img/Logo.jpg" alt="" class="img-responsive" />
+                    </figure>
+                </center>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 col-md-6 header_center">
+                <h2 class="hidden-xs">Control de ejecución de servicios</h2>
+                <h3 class="hidden-xs"> Métrica Andina (Perú)</h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 col-md-3 header_right" ng-controller="AppCtrl">
+                <center>
+                    <figure>
+                        <img src="@Html.Raw(Session["foto_avatar"].ToString())" alt="" class="img-circle" id="foto_profile" />
+                        <input style="height: 100%;top: 0;position: absolute; opacity: 0;" type="file" id="fileImageEmpleado" />
+                    </figure>
+                </center>
+            </div>
+        </div>
+    </header>
+    <nav class="nav-bar" ng-controller="NotiCtrl">
+        <div class="row">
+            <div class="col-xs-8 col-sm-8 col-md-10 nav_left">
+                <strong class="hidden-xs">Bienvenido : </strong>
+                <span>@Html.Raw(Session["nombres"]).ToString()</span> 
+                <span class="badge">{{count}}</span>
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-2 nav_right">
+                <a href="~/login/close" class="pull-right">
+                    <span class="glyphicon glyphicon-off"></span>
+                    <span class="hidden-xs">Salir</span>
+                </a>
+                <a href="~/home/menu" id="home_direct" class="pull-right">
+                    <span class="glyphicon glyphicon-home"></span>
+                    <span class="hidden-xs">Inicio</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <section class="container">
+        @RenderBody()
+    </section>
+
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.1.2.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-locale_es-pe.js"></script>
+    <script src="~/Scripts/angular-resource.min.js"></script>
+    <script src="~/Scripts/appjs/app-factory.js"></script>
+    <script src="~/Scripts/appjs/app-service.js"></script>
+    <script src="~/Scripts/appjs/utilitario.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

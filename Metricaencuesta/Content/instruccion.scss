@@ -1,0 +1,53 @@
+﻿@import "cssfile/utility.min.css";
+$metricacolor:#006683;
+body{
+    background-color:#F2F2F2;
+    section{
+        background-color:white;
+        .header{
+            margin-top:10px;
+            figure{
+                img{
+                    height:80px;
+                }
+            }
+            .thumbnail{
+                border:none;    
+                border-radius:0;
+                border-left:2px solid #016684;
+                margin-bottom:0;
+                p{
+                    color:#989292;
+                    margin:0 0 2px;
+                    font-size:.9em;
+                }
+            }
+        }
+        article.row{
+            .panel-body{
+                .questions{
+                    text-align:justify;
+                    li{
+                        padding-bottom:.5em;
+                        list-style:none;
+                    }
+                }
+                .form-element{
+                    margin-top:10px;
+                    padding-bottom:10px;
+                    .form-group{
+                        label{
+                            line-height:2;
+                        }
+                        input[type="text"],textarea,select{
+                            border:none;
+                            border-radius:0;
+                            border-bottom:1px solid $metricacolor;
+                            color:$metricacolor;
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}

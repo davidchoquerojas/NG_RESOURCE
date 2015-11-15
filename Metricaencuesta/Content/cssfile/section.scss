@@ -1,0 +1,25 @@
+﻿$metricacolor:#006683;
+body {
+    section{
+        .margin-top{
+            margin-top:30px;
+            .form-horizontal{
+                .form-group{
+                    label{
+                        font-weight:600;
+                        color:$metricacolor;
+                    }
+                    input[type="text"],input[type="tel"],input[type="password"],input[type="email"],input[type="date"],select,textarea{
+                        border:none;
+                        border-radius:0;
+                        border-bottom:1px solid $metricacolor;
+                        color:$metricacolor;
+                    }
+                }
+            }
+        }
+        .table-responsive{
+            max-height:350px;
+        }
+    }
+}

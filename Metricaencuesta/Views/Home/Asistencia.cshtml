@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Asistencia";
+}
+<div class="row margin-top" ng-controller="AsistenciaCtrl">
+    <div class="col-md-12">
+        <form class="form-horizontal">
+            <div class="row">
+                <div class="col-xs-12 col-sm-5 col-md-5">
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3">Tipo Acción</label>
+                        <div class="col-sm-9 col-md-9">
+                            <select class="form-control" ng-model="tipo_asistencia" ng-options="t.code as t.text for t in asisType" ng-change="chekMark()">
+                                <option value=""> --- Seleccione --- </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3">Fecha</label>
+                        <div class="col-sm-9 col-md-9">
+                            <span class="label label-info">{{dateNow | date:'fullDate'}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-2 col-md-2">
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3">Hora</label>
+                        <div class="col-sm-9 col-md-9">
+                            <span class="label label-info">{{timeNow | date:'mediumTime'}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-2 col-md-2">
+                    <div class="form-group">
+                        <button class="btn btn-default pull-right" ng-click="save()" ng-disabled="tipo_asistencia == undefined">
+                            <span class="glyphicon glyphicon-save"></span>
+                            Registrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th class="text-center">Colaborador <i class="fa fa-sort"></i></th>
+                        <th class="text-center">Tipo Acción <i class="fa fa-sort"></i></th>
+                        <th class="text-center">Fecha <i class="fa fa-sort"></i></th>
+                        <th class="text-center">Hora <i class="fa fa-sort"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="a in listAsistencia">
+                        <td class="text-center">{{a.empleado.nombres}} {{a.empleado.apellidos}}</td>
+                        <td class="text-center"  ng-if="a.tipo_asistencia == 'Ing'">Inicio de servicio</td>
+                        <td class="text-center"  ng-if="a.tipo_asistencia != 'Ing'">Fin de servicio</td>
+                        <td class="text-center">{{a.fecha_asistencia|totime | date:'fullDate'}}</td>
+                        <td class="text-center">{{a.hora_asistencia | date:'mediumTime'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/Scripts/appjs/asistencia-controller.js"></script>
+}

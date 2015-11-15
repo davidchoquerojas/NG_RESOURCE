@@ -1,0 +1,174 @@
+﻿<error errorId="dd01be79-1a1f-4258-83aa-919e7ecec271" host="LPMETRICA23" type="System.Web.HttpException" message="El host remoto cerró la conexión. El error de código es 0x800704CD." source="System.Web" detail="System.Web.HttpException (0x800704CD): El host remoto cerró la conexión. El error de código es 0x800704CD.&#xD;&#xA;   en System.Web.Hosting.IIS7WorkerRequest.RaiseCommunicationError(Int32 result, Boolean throwOnDisconnect)&#xD;&#xA;   en System.Web.Hosting.IIS7WorkerRequest.ExplicitFlush()&#xD;&#xA;   en System.Web.HttpResponse.Flush(Boolean finalFlush, Boolean async)&#xD;&#xA;   en System.Web.HttpResponse.Flush()&#xD;&#xA;   en System.Web.HttpWriter.WriteFromStream(Byte[] data, Int32 offset, Int32 size)&#xD;&#xA;   en System.Web.HttpResponseStream.Write(Byte[] buffer, Int32 offset, Int32 count)&#xD;&#xA;   en Microsoft.Owin.Host.SystemWeb.CallStreams.OutputStream.Write(Byte[] buffer, Int32 offset, Int32 count)&#xD;&#xA;   en Microsoft.AspNet.SignalR.Owin.ServerResponse.Write(ArraySegment`1 data)&#xD;&#xA;   en Microsoft.AspNet.SignalR.Hosting.ResponseExtensions.End(IResponse response, String data)&#xD;&#xA;   en Microsoft.AspNet.SignalR.PersistentConnection.SendJsonResponse(HostContext context, String jsonPayload)&#xD;&#xA;   en Microsoft.AspNet.SignalR.PersistentConnection.ProcessNegotiationRequest(HostContext context)&#xD;&#xA;   en Microsoft.AspNet.SignalR.PersistentConnection.ProcessRequest(HostContext context)&#xD;&#xA;   en Microsoft.AspNet.SignalR.Hubs.HubDispatcher.ProcessRequest(HostContext context)&#xD;&#xA;   en Microsoft.AspNet.SignalR.PersistentConnection.ProcessRequest(IDictionary`2 environment)&#xD;&#xA;   en Microsoft.AspNet.SignalR.Owin.Middleware.HubDispatcherMiddleware.Invoke(IOwinContext context)&#xD;&#xA;   en Microsoft.Owin.Infrastructure.OwinMiddlewareTransition.Invoke(IDictionary`2 environment)&#xD;&#xA;   en Microsoft.Owin.Mapping.MapMiddleware.&lt;Invoke&gt;d__0.MoveNext()&#xD;&#xA;--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---&#xD;&#xA;   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   en Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContextStage.&lt;RunApp&gt;d__5.MoveNext()&#xD;&#xA;--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---&#xD;&#xA;   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   en Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.&lt;DoFinalWork&gt;d__2.MoveNext()&#xD;&#xA;--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---&#xD;&#xA;   en Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.StageAsyncResult.End(IAsyncResult ar)&#xD;&#xA;   en Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.EndFinalWork(IAsyncResult ar)&#xD;&#xA;   en System.Web.HttpApplication.AsyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2015-11-02T20:17:33.1769886Z" statusCode="500">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:Keep-Alive&#xD;&#xA;HTTP_CONTENT_TYPE:application/json; charset=UTF-8&#xD;&#xA;HTTP_ACCEPT:text/plain, */*; q=0.01&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:es-PE&#xD;&#xA;HTTP_HOST:localhost:51858&#xD;&#xA;HTTP_REFERER:http://localhost:51858/home/login&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko&#xD;&#xA;HTTP_X_REQUESTED_WITH:XMLHttpRequest&#xD;&#xA;HTTP_DNT:1&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: Keep-Alive&#xD;&#xA;Content-Type: application/json; charset=UTF-8&#xD;&#xA;Accept: text/plain, */*; q=0.01&#xD;&#xA;Accept-Encoding: gzip, deflate&#xD;&#xA;Accept-Language: es-PE&#xD;&#xA;Host: localhost:51858&#xD;&#xA;Referer: http://localhost:51858/home/login&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko&#xD;&#xA;X-Requested-With: XMLHttpRequest&#xD;&#xA;DNT: 1&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/2/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\dchoque\Documents\Visual Studio 2015\Projects\MetricaencuestaSignalIr\Metricaencuesta\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="application/json; charset=UTF-8" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="2" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/2" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/signalr/negotiate" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\dchoque\Documents\Visual Studio 2015\Projects\MetricaencuestaSignalIr\Metricaencuesta\signalr\negotiate" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="clientProtocol=1.4&amp;connectionData=%5B%5D&amp;_=1446495337247" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="61019" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/signalr/negotiate" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="51858" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/signalr/negotiate" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="Keep-Alive" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="application/json; charset=UTF-8" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/plain, */*; q=0.01" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="es-PE" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:51858" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:51858/home/login" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko" />
+    </item>
+    <item name="HTTP_X_REQUESTED_WITH">
+      <value string="XMLHttpRequest" />
+    </item>
+    <item name="HTTP_DNT">
+      <value string="1" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="clientProtocol">
+      <value string="1.4" />
+    </item>
+    <item name="connectionData">
+      <value string="[]" />
+    </item>
+    <item name="_">
+      <value string="1446495337247" />
+    </item>
+  </queryString>
+</error>

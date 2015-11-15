@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "Instruccion";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html ng-app="app" lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - MétrIca Andina</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/instruccion.min.css" />
+    <meta name="description" content="The description of my page" />
+</head>
+<body>
+    <input type="hidden" value="@Html.Raw(Session["id_evaluador"].ToString())" id="id_evaluador" />
+    <input type="hidden" value="@Html.Raw(Session["id_encuesta"].ToString())" id="id_encuesta" />
+
+    <section class="container">
+        <article class="row header">
+            <div class="col-xs-12 col-sm-8 col-md-9">
+                <figure>
+                    <img src="~/Utils/img/Logo.jpg" alt="" class="img-responsive" />
+                </figure>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-3">
+                <div class="thumbnail">
+                    <p>Calle Monte Rosa 255, 5° Piso</p>
+                    <p>Chacarrilla, LIMA 33 [PERÚ]</p>
+                    <p>www.metricaandina.com</p>
+                </div>
+            </div>
+        </article>
+        <article class="row" ng-controller="ResultadoCtrl">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <form novalidate name="form">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h5>
+                                    <strong>EVALUACIÓN DEL DESEMPEÑO LABORAL</strong>
+                                    <a class="btn btn-default pull-right" href="~/home/login" title="Cerrar Sesión"><span class="glyphicon glyphicon-off"></span></a>
+                                </h5>
+                            </div>
+
+                            <div id="screen1" class="panel-collapse collapse in fade" aria-expanded="false">
+                                <div class="panel-body">
+                                    <h5><strong>INSTRUCCIONES</strong> </h5>
+                                    <ul class="questions">
+                                        <li>1. Antes de iniciar la evaluación del personal a su cargo, lea bien las instrucciones, si tiene duda consulte con la persona responsable del área de Recursos Humanos.</li>
+                                        <li>2. Lea bien el contenido de la competencia y comportamiento a evaluar.</li>
+                                        <li>3. En forma objetiva y de conciencia asigne el puntaje correspondiente.</li>
+                                        <li>
+                                            4. Recuerde que en la escala para ser utilizada por el evaluador, cada puntaje correspondiente a un nivel que va de Muy bajo a Muy alto.
+                                            <ul>
+                                                <li><strong>Muy bajo &nbsp&nbsp&nbsp&nbsp:1</strong> --Inferior.- Rendimiento laboral no aceptable.</li>
+                                                <li><strong>Bajo &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:2</strong> --Inferior al promedio. - Rendimiento laboral regular.</li>
+                                                <li><strong>Medio  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:3</strong> --Promedio.- Rendimiento laboral bueno.</li>
+                                                <li><strong>Alto  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:4</strong> --Superior al promedio .- Rendimiento laboral muy bueno.</li>
+                                                <li><strong>Muy Alto &nbsp&nbsp&nbsp&nbsp:5</strong> --Superior.- Rendimiento laboral excelente.</li>
+                                            </ul>
+                                        </li>
+                                        <li>5. En el espacio relacionado a comentarios, es necesario que anote lo adicional que usted quiere remarcar.</li>
+                                        <li>6. El evaluador podrá solicitar una copia del formato de evaluación si lo considera necesario, deberá solicitarlo a persona responsable del areá de Recursos Humanos.</li>
+                                        <li>7. No se olvide firmar todas las hojas de evaluación</li>
+                                        <li>8. La entrega de los formatos de evaluación, se realizaran un plazo no mayor a 02 días hábiles.</li>
+                                        <li>9. Lea atentamente las competencias que se detallan a continuación y marque el control <input type="radio"/> con el número que refleja su evaluación.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <a ng-disabled="screen == '1'" ng-click="screen = 1" data-toggle="collapse" data-parent="#accordion" data-target="#screen1" class="collapsed btn btn-default pull-left"><span class="glyphicon glyphicon-chevron-left"></span>  Anterior</a>
+                                <a ng-disabled="screen == '2'" ng-click="screen = 2" data-toggle="collapse" data-parent="#accordion" data-target="#screen2" class="collapsed btn btn-default pull-right"><span class="glyphicon glyphicon-chevron-right"></span> Siguiente</a>
+                            </div>
+                            <div id="screen2" class="panel-collapse collapse fade" aria-expanded="false">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12 form-element">
+                                            <div class="form-group">
+                                                <label class="col-sm-3 col-md-2">Colaborador</label>
+                                                <div class="col-sm-9 col-md-10">
+                                                    <select class="form-control" ng-model="id_empleado" ng-options="c.id_empleado as c.nombres+' '+c.apellidos for c in listColaborador" required>
+                                                        <option value=""> -- Seleccione --</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 col-md-2">Comentarios</label>
+                                                <div class="col-sm-9 col-md-10">
+                                                    <textarea class="form-control" ng-model="comentario" placeholder="Escribe su comentario"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center" rowspan="2" style="vertical-align:middle;">ÁREA DEL DESEMPEÑO</th>
+                                                    <th class="text-center">MUY BAJO</th>
+                                                    <th class="text-center">BAJO</th>
+                                                    <th class="text-center">MEDIO</th>
+                                                    <th class="text-center">ALTO</th>
+                                                    <th class="text-center">MUY ALTO</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center">1</th>
+                                                    <th class="text-center">2</th>
+                                                    <th class="text-center">3</th>
+                                                    <th class="text-center">4</th>
+                                                    <th class="text-center">5</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="e in listEncuesta">
+                                                    <td ng-if="e.tipo == 'P'" colspan="6"><strong>{{e.descripcion}}</strong></td>
+                                                    <td ng-if="e.tipo == 'H'">{{e.descripcion}}</td>
+                                                    <td class="text-center" ng-if="e.tipo == 'H'"><label class="radio-inline" style="margin-bottom:1.5em;"><input type="radio" ng-model="puntaje" name="{{e.index}}" value="1" ng-change="chekMe(puntaje,e.index)" title="Muy Bajo"/></label></td>
+                                                    <td class="text-center" ng-if="e.tipo == 'H'"><label class="radio-inline" style="margin-bottom:1.5em;"><input type="radio" ng-model="puntaje" name="{{e.index}}" value="2" ng-change="chekMe(puntaje,e.index)" title="Bajo" /></label></td>
+                                                    <td class="text-center" ng-if="e.tipo == 'H'"><label class="radio-inline" style="margin-bottom:1.5em;"><input type="radio" ng-model="puntaje" name="{{e.index}}" value="3" ng-change="chekMe(puntaje,e.index)" title="Medio" /></label></td>
+                                                    <td class="text-center" ng-if="e.tipo == 'H'"><label class="radio-inline" style="margin-bottom:1.5em;"><input type="radio" ng-model="puntaje" name="{{e.index}}" value="4" ng-change="chekMe(puntaje,e.index)" title="Alto" /></label></td>
+                                                    <td class="text-center" ng-if="e.tipo == 'H'"><label class="radio-inline" style="margin-bottom:1.5em;"><input type="radio" ng-model="puntaje" name="{{e.index}}" value="5" ng-change="chekMe(puntaje,e.index)" title="Muy Alto" /></label></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <button class="btn btn-default pull-right" ng-disabled="form.$invalid" ng-click="save()"><span class="glyphicon glyphicon-floppy-save"></span> Guardar</button>
+                                        <button class="btn btn-default pull-right" ng-disabled="id_empleado == undefined" ng-click="new()"><span class="glyphicon glyphicon-erase"></span> Limpiar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </article>
+    </section>
+    <div id="alert" class="modal fade" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog">
+            <img src="~/Utils/img/loading.gif" alt="" height="60" style="margin:auto;display:table-cell;"/>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+  
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-locale_es-pe.js"></script>
+    <script src="~/Scripts/angular-resource.min.js"></script>
+    <script src="~/Scripts/appjs/app-factory.js"></script>
+    <script src="~/Scripts/appjs/app-service.js"></script>
+    <script src="~/Scripts/appjs/resultado-controller.js"></script>
+</body>
+</html>

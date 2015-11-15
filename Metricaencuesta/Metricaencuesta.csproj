@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28122691-C2B4-480C-BA56-48373AC96200}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Metricaencuesta</RootNamespace>
+    <AssemblyName>Metricaencuesta</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Elmah, Version=1.2.13605.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Mvc, Version=2.1.2.1389, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.Mvc.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\..\..\Visual Studio 2013\Projects\APIASIS\APIASIS\bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.7.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.7\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.1.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.1.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\..\..\..\Visual Studio 2013\Projects\APIASIS\APIASIS\bin\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\..\..\..\Visual Studio 2013\Projects\APIASIS\APIASIS\bin\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\..\..\..\Visual Studio 2013\Projects\APIASIS\APIASIS\bin\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\..\..\..\Visual Studio 2013\Projects\APIASIS\APIASIS\bin\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppNotification.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AsistenciaController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\ClienteEmpleadoController.cs" />
+    <Compile Include="Controllers\EmpleadoController.cs" />
+    <Compile Include="Controllers\EncuestaConfigController.cs" />
+    <Compile Include="Controllers\EvaluadorController.cs" />
+    <Compile Include="Controllers\GpreguntaController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PreguntaController.cs" />
+    <Compile Include="Controllers\ResultadoController.cs" />
+    <Compile Include="Data\AsistenciaDB.cs" />
+    <Compile Include="Data\ClienteDB.cs" />
+    <Compile Include="Data\ClienteEmpleadoDB.cs" />
+    <Compile Include="Data\EmpleadoDB.cs" />
+    <Compile Include="Data\Encuesta_configDB.cs" />
+    <Compile Include="Data\EvaluadorDB.cs" />
+    <Compile Include="Data\GpreguntaDB.cs" />
+    <Compile Include="Data\PreguntaDB.cs" />
+    <Compile Include="Data\ReporteEncuestaDB.cs" />
+    <Compile Include="Data\ResultadoDB.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\asistencia.cs" />
+    <Compile Include="Models\cliente.cs" />
+    <Compile Include="Models\cliente_empleado.cs" />
+    <Compile Include="Models\empleado.cs" />
+    <Compile Include="Models\encuesta_config.cs" />
+    <Compile Include="Models\evaluador.cs" />
+    <Compile Include="Models\gpregunta.cs" />
+    <Compile Include="Models\Mapping\asistenciaMap.cs" />
+    <Compile Include="Models\Mapping\clienteMap.cs" />
+    <Compile Include="Models\Mapping\cliente_empleadoMap.cs" />
+    <Compile Include="Models\Mapping\empleadoMap.cs" />
+    <Compile Include="Models\Mapping\encuestaMap.cs" />
+    <Compile Include="Models\Mapping\encuesta_configMap.cs" />
+    <Compile Include="Models\Mapping\evaluadorMap.cs" />
+    <Compile Include="Models\Mapping\gpreguntaMap.cs" />
+    <Compile Include="Models\Mapping\preguntaMap.cs" />
+    <Compile Include="Models\Mapping\resultadoMap.cs" />
+    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
+    <Compile Include="Models\pregunta.cs" />
+    <Compile Include="Models\PruebaContext.cs" />
+    <Compile Include="Models\ReporteEncuesta.cs" />
+    <Compile Include="Models\resultado.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Utils\DeleteFile.cs" />
+    <Compile Include="Utils\EncriptarDesencriptar.cs" />
+    <Compile Include="Utils\LogResult.cs" />
+    <Compile Include="Utils\PdfGenerator.cs" />
+    <Compile Include="Utils\ReporteAsistencia.cs" />
+    <Compile Include="Utils\ReporteEmpleado.cs" />
+    <Compile Include="Utils\ReporteEncuestaExcel.cs" />
+    <Compile Include="Utils\SendMail.cs" />
+    <Compile Include="Utils\SessionValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cssfile\header.css" />
+    <Content Include="Content\cssfile\header.min.css" />
+    <Content Include="Content\cssfile\login.css" />
+    <Content Include="Content\cssfile\login.min.css" />
+    <Content Include="Content\cssfile\nav.css" />
+    <Content Include="Content\cssfile\nav.min.css" />
+    <Content Include="Content\cssfile\section.css" />
+    <Content Include="Content\cssfile\section.min.css" />
+    <Content Include="Content\cssfile\utility.css" />
+    <Content Include="Content\cssfile\utility.min.css" />
+    <Content Include="Content\instruccion.css">
+      <DependentUpon>instruccion.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\instruccion.min.css">
+      <DependentUpon>instruccion.css</DependentUpon>
+    </Content>
+    <Content Include="Content\login-cliente.css">
+      <DependentUpon>login-cliente.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\login-cliente.min.css">
+      <DependentUpon>login-cliente.css</DependentUpon>
+    </Content>
+    <Content Include="Content\page.css">
+      <DependentUpon>page.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\page.min.css">
+      <DependentUpon>page.css</DependentUpon>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Content\cssfile\header.css.map" />
+    <Content Include="Content\cssfile\header.scss" />
+    <Content Include="Content\cssfile\login.css.map" />
+    <Content Include="Content\cssfile\login.scss" />
+    <Content Include="Content\cssfile\nav.css.map" />
+    <Content Include="Content\cssfile\nav.scss" />
+    <Content Include="Content\cssfile\section.css.map" />
+    <Content Include="Content\cssfile\section.scss" />
+    <Content Include="Content\cssfile\utility.css.map" />
+    <Content Include="Content\cssfile\utility.scss" />
+    <Content Include="Content\page.scss" />
+    <Content Include="Content\page.css.map">
+      <DependentUpon>page.css</DependentUpon>
+    </Content>
+    <Content Include="Scripts\appjs\asistencia-controller.js" />
+    <Content Include="Scripts\appjs\cliente_empleado-controller.js" />
+    <Content Include="Scripts\appjs\empleado-controller.js" />
+    <Content Include="Scripts\appjs\cliente-controller.js" />
+    <Content Include="Scripts\appjs\encuesta_config-controller.js" />
+    <Content Include="Scripts\appjs\evaluador-controller.js" />
+    <Content Include="Scripts\appjs\login-controller.js" />
+    <Content Include="Scripts\appjs\pregunta-controller.js" />
+    <Content Include="Scripts\appjs\reporte-controller.js" />
+    <Content Include="Scripts\appjs\reporte_encuesta-controller.js" />
+    <Content Include="Scripts\appjs\resultado-controller.js" />
+    <Content Include="Scripts\appjs\utilitario.js" />
+    <Content Include="Scripts\bootstrap.min.js.map">
+      <DependentUpon>bootstrap.min.js</DependentUpon>
+    </Content>
+    <Content Include="Content\instruccion.scss" />
+    <Content Include="Content\login-cliente.scss" />
+    <Content Include="Content\login-cliente.css.map">
+      <DependentUpon>login-cliente.css</DependentUpon>
+    </Content>
+    <Content Include="Content\instruccion.css.map">
+      <DependentUpon>instruccion.css</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\Encuesta.pubxml" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\angular-locale_es-pe.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\appjs\app-factory.js" />
+    <Content Include="Scripts\appjs\app-service.js" />
+    <Content Include="Scripts\appjs\gpregunta-controller.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.1.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
+    <Content Include="Utils\cvs\cv.txt" />
+    <Content Include="Utils\img\empresa.jpg" />
+    <Content Include="Utils\img\loading.gif" />
+    <Content Include="Utils\img\Logo.jpg" />
+    <Content Include="Utils\img\logo_profile.png" />
+    <Content Include="Utils\Log\log1.txt" />
+    <Content Include="Utils\pdfs\pdf.txt" />
+    <Content Include="Utils\xlsxs\xls.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="Views\Home\Gpregunta.cshtml" />
+    <Content Include="Scripts\jquery-2.1.4.min.js.map">
+      <DependentUpon>jquery-2.1.4.min.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Home\Pregunta.cshtml" />
+    <Content Include="Views\Home\Evaluador.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Instruccion.cshtml" />
+    <Content Include="Views\Home\Empleado.cshtml" />
+    <Content Include="Views\Home\Cliente.cshtml" />
+    <Content Include="Views\Home\Reporte.cshtml" />
+    <Content Include="Views\Home\Asistencia.cshtml" />
+    <Content Include="Views\Home\ClienteEmpleado.cshtml" />
+    <Content Include="Views\Login\Auth.cshtml" />
+    <Content Include="Views\Home\EncuestaConfig.cshtml" />
+    <Content Include="Views\Home\ReporteEncuesta.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52087</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51858/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "ReporteEncuesta";
+}
+<div class="row margin-top" ng-controller="ReporteCtrl">
+    <div class="col-md-12">
+        <form class="form-horizontal" name="form">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3">Tipo</label>
+                        <div class="col-sm-9 col-md-9">
+                            <select class="form-control" ng-model="type" required>
+                                <option value=""> -- Seleccione --</option>
+                                <option value="1">Reporte Consolidado Mensual</option>
+                                <option value="2">Reporte Consolidado </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3">Fecha desde</label>
+                        <div class="col-sm-9 col-md-9">
+                            <input type="date" class="form-control" id="fecha_desde" required/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3">Fecha hasta</label>
+                        <div class="col-sm-9 col-md-9">
+                            <input type="date" class="form-control" id="fecha_hasta"  required/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-2 col-md-3">
+                    <div class="form-group">
+                        <button class="btn btn-default pull-right" ng-click="download()" ng-disabled="form.$invalid" title="Descargar información">
+                            <span class="glyphicon glyphicon-download-alt"></span>
+                            Descargar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<iframe id="fileDonwload" src="" style="display:none;visibility:hidden;width:1px;height:1px"></iframe>
+@section Scripts{
+    <script src="~/Scripts/appjs/reporte_encuesta-controller.js"></script>
+}
